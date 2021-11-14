@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://juego/niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/objetos/Portal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/personaje/Personaje.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/plataformas/PlataformaLargaPiedra.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/plataformas/PlataformaCesped.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=6]
+[ext_resource path="res://juego/objetos/Pinchos.tscn" type="PackedScene" id=7]
+[ext_resource path="res://recursos/Environment/grass1.png" type="Texture" id=8]
+[ext_resource path="res://recursos/Environment/grass2.png" type="Texture" id=9]
+
+[node name="Nivel3" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/niveles/Nivel3.tscn"
+
+[node name="Decoracion" type="Node" parent="." index="2"]
+
+[node name="grass1" type="Sprite" parent="Decoracion" index="0"]
+position = Vector2( 321.845, 455.807 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="grass2" type="Sprite" parent="Decoracion" index="1"]
+position = Vector2( 1179.84, 535.807 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="PlataformaCesped" parent="PlataformasNormales" index="0" instance=ExtResource( 5 )]
+position = Vector2( 258, 486 )
+
+[node name="PlataformaCesped2" parent="PlataformasNormales" index="1" instance=ExtResource( 5 )]
+position = Vector2( 1120, 564 )
+
+[node name="PlataformaLargaPiedra" parent="PlataformasLargas" index="0" instance=ExtResource( 4 )]
+position = Vector2( 668, 570 )
+
+[node name="Pinchos2" parent="Pinchos" index="0" instance=ExtResource( 7 )]
+position = Vector2( 662, 537.584 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 6 )]
+position = Vector2( 663.5, 377.201 )
+
+[node name="ZanahoriaLlave2" parent="Zanahorias" index="1" instance=ExtResource( 6 )]
+position = Vector2( 819.5, 509.201 )
+
+[node name="ZanahoriaLlave3" parent="Zanahorias" index="2" instance=ExtResource( 6 )]
+position = Vector2( 507.5, 509.201 )
+
+[node name="Portal" parent="." index="12" instance=ExtResource( 2 )]
+position = Vector2( 256.274, 411.946 )
+proximo_nivel = "res://juego/niveles/Nivel4.tscn"
+
+[node name="Personaje" parent="." index="13" instance=ExtResource( 3 )]
+position = Vector2( 1121.95, 534.657 )

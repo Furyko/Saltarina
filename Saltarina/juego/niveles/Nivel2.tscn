@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://juego/niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/objetos/Portal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/personaje/Personaje.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/plataformas/PlataformaCesped.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=5]
+[ext_resource path="res://recursos/Environment/grass1.png" type="Texture" id=6]
+[ext_resource path="res://recursos/Environment/grass2.png" type="Texture" id=7]
+
+[node name="Nivel2" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/niveles/Nivel2.tscn"
+
+[node name="Decoracion" type="Node" parent="." index="2"]
+
+[node name="grass1" type="Sprite" parent="Decoracion" index="0"]
+position = Vector2( 560, 462.687 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="grass2" type="Sprite" parent="Decoracion" index="1"]
+position = Vector2( 941, 458.687 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="PlataformaCesped" parent="PlataformasNormales" index="0" instance=ExtResource( 4 )]
+position = Vector2( 594, 490 )
+
+[node name="PlataformaCesped2" parent="PlataformasNormales" index="1" instance=ExtResource( 4 )]
+position = Vector2( 342, 490 )
+
+[node name="PlataformaCesped3" parent="PlataformasNormales" index="2" instance=ExtResource( 4 )]
+position = Vector2( 882, 490 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 5 )]
+position = Vector2( 339.318, 435.578 )
+
+[node name="ZanahoriaLlave2" parent="Zanahorias" index="1" instance=ExtResource( 5 )]
+position = Vector2( 593.318, 265.578 )
+
+[node name="Portal" parent="." index="12" instance=ExtResource( 2 )]
+position = Vector2( 881.676, 407.294 )
+proximo_nivel = "res://juego/niveles/Nivel3.tscn"
+
+[node name="Personaje" parent="." index="13" instance=ExtResource( 3 )]
+position = Vector2( 596.799, 467.863 )

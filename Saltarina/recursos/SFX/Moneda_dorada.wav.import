@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Moneda_dorada.wav-04741b6ab32351da961f723d8244802b.sample"
+
+[deps]
+
+source_file="res://recursos/SFX/Moneda_dorada.wav"
+dest_files=[ "res://.import/Moneda_dorada.wav-04741b6ab32351da961f723d8244802b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

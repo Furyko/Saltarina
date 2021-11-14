@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://recursos/Fonts/Kenney Future.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://recursos/HUD/coin_gold.png" type="Texture" id=2]
+[ext_resource path="res://recursos/Background/bg_layer1.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "default"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.591, 0.591 ), Vector2( 0.667, 0.667 ), Vector2( 0.558, 0.558 ), Vector2( 0.437, 0.437 ), Vector2( 0.591, 0.591 ) ]
+}
+
+[node name="ContenedorMonedas" type="NinePatchRect"]
+self_modulate = Color( 0.866667, 0, 0.909804, 0.27451 )
+anchor_left = 0.00078125
+anchor_right = -0.025
+anchor_bottom = -0.0305556
+margin_left = -1.0
+margin_right = 146.0
+margin_bottom = 49.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="Cantidad" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 12.5
+margin_top = -13.5
+margin_right = 63.5
+margin_bottom = 13.5
+custom_fonts/font = SubResource( 1 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -47.0
+margin_top = -23.5
+margin_bottom = 23.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="MarginContainer"]
+position = Vector2( 21.5, 24 )
+scale = Vector2( 0.591, 0.591 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 2 )

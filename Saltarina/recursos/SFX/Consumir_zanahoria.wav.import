@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Consumir_zanahoria.wav-e200fe94b10b8ce39e6a75cb033f2fbb.sample"
+
+[deps]
+
+source_file="res://recursos/SFX/Consumir_zanahoria.wav"
+dest_files=[ "res://.import/Consumir_zanahoria.wav-e200fe94b10b8ce39e6a75cb033f2fbb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
