@@ -20,3 +20,7 @@ func _on_BotonMenuPrincipal_pressed():
 	get_tree().paused = false
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://juego/menus/MenuPrincipal.tscn")
+
+
+func _on_SliderVolumen_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
