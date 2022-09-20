@@ -33,8 +33,13 @@ max_value = 0.0
 [node name="BotonMenu" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 38.0
 margin_right = 412.0
-margin_bottom = 92.0
+margin_bottom = 64.0
 text = "Volver al inicio"
+
+[node name="CheckFullscreen" type="CheckBox" parent="VBoxContainer"]
+margin_top = 68.0
+margin_right = 412.0
+margin_bottom = 92.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( 0, -400 )
@@ -88,3 +93,4 @@ texture = ExtResource( 6 )
 
 [connection signal="value_changed" from="VBoxContainer/SliderVolumen" to="." method="_on_SliderVolumen_value_changed"]
 [connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="_on_BotonMenu_pressed"]
+[connection signal="toggled" from="VBoxContainer/CheckFullscreen" to="." method="_on_CheckFullscreen_toggled"]

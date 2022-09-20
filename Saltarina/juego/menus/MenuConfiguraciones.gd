@@ -14,3 +14,7 @@ func _on_BotonMenu_pressed():
 
 func _on_SliderVolumen_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
+
+
+func _on_CheckFullscreen_toggled(button_pressed):
+	OS.set_window_fullscreen(button_pressed)
