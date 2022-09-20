@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://juego/menus/botones/BotonMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/menus/MenuConfiguraciones.gd" type="Script" id=2]
+[ext_resource path="res://recursos/Background/bg_layer2.png" type="Texture" id=3]
+[ext_resource path="res://recursos/Background/bg_layer3.png" type="Texture" id=4]
+[ext_resource path="res://recursos/Background/bg_layer1.png" type="Texture" id=5]
+[ext_resource path="res://recursos/Background/bg_layer4.png" type="Texture" id=6]
+
+[node name="MenuConfiguraciones" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 402.0
+margin_top = 173.0
+margin_right = 814.0
+margin_bottom = 265.0
+
+[node name="LabelVolumen" type="Label" parent="VBoxContainer"]
+margin_right = 412.0
+margin_bottom = 14.0
+text = "Volumen global:"
+
+[node name="SliderVolumen" type="HSlider" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 412.0
+margin_bottom = 34.0
+min_value = -50.0
+max_value = 0.0
+
+[node name="BotonMenu" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 38.0
+margin_right = 412.0
+margin_bottom = 92.0
+text = "Volver al inicio"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -400 )
+
+[node name="ParallaxFondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxFondo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesLejanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesLejanas"]
+margin_top = -554.998
+margin_right = 2048.0
+margin_bottom = 1493.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubeMedias" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubeMedias"]
+margin_top = -728.671
+margin_right = 2048.0
+margin_bottom = 1319.33
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubeCecanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubeCecanas"]
+margin_top = -875.915
+margin_right = 2048.0
+margin_bottom = 1172.08
+texture = ExtResource( 6 )
+
+[connection signal="value_changed" from="VBoxContainer/SliderVolumen" to="." method="_on_SliderVolumen_value_changed"]
+[connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="_on_BotonMenu_pressed"]

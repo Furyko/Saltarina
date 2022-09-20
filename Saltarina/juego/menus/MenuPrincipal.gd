@@ -17,3 +17,7 @@ func _on_BotonIniciar_pressed():
 	MusicaGlobal.replay()
 # warning-ignore:return_value_discarded
 	get_tree().change_scene(proxima_escena)
+
+
+func _on_BotonConfiguraciones_pressed():
+	get_tree().change_scene("res://juego/menus/MenuConfiguraciones.tscn")

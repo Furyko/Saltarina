@@ -128,17 +128,20 @@ margin_top = -170.0
 margin_right = -191.375
 margin_bottom = 170.0
 custom_constants/separation = 15
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BotonIniciar" parent="VBoxContainer" instance=ExtResource( 3 )]
 margin_right = 321.0
-margin_bottom = 162.0
+margin_bottom = 103.0
 text = "Iniciar juego"
 
+[node name="BotonConfiguraciones" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 118.0
+margin_right = 321.0
+margin_bottom = 221.0
+text = "Configuraciones"
+
 [node name="BotonSalir" type="Button" parent="VBoxContainer"]
-margin_top = 177.0
+margin_top = 236.0
 margin_right = 321.0
 margin_bottom = 340.0
 size_flags_horizontal = 3
@@ -202,9 +205,6 @@ margin_top = -875.915
 margin_right = 2048.0
 margin_bottom = 1172.08
 texture = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ground_grass" type="Sprite" parent="."]
 position = Vector2( 408.435, 511.966 )
@@ -223,9 +223,6 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Panel"]
 modulate = Color( 0.737255, 0.443137, 0.878431, 1 )
@@ -241,4 +238,5 @@ custom_fonts/font = SubResource( 6 )
 text = "Menu Principal"
 
 [connection signal="pressed" from="VBoxContainer/BotonIniciar" to="." method="_on_BotonIniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonConfiguraciones" to="." method="_on_BotonConfiguraciones_pressed"]
 [connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_pressed"]
