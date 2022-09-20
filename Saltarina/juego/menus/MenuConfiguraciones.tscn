@@ -36,10 +36,21 @@ margin_right = 412.0
 margin_bottom = 64.0
 text = "Volver al inicio"
 
-[node name="CheckFullscreen" type="CheckBox" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 68.0
 margin_right = 412.0
 margin_bottom = 92.0
+
+[node name="LabelFullscreen" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 111.0
+margin_bottom = 19.0
+text = "Pantall completa:"
+
+[node name="CheckFullscreen" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+margin_left = 115.0
+margin_right = 139.0
+margin_bottom = 24.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( 0, -400 )
@@ -93,4 +104,4 @@ texture = ExtResource( 6 )
 
 [connection signal="value_changed" from="VBoxContainer/SliderVolumen" to="." method="_on_SliderVolumen_value_changed"]
 [connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="_on_BotonMenu_pressed"]
-[connection signal="toggled" from="VBoxContainer/CheckFullscreen" to="." method="_on_CheckFullscreen_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckFullscreen" to="." method="_on_CheckFullscreen_toggled"]
