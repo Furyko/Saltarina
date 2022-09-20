@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://juego/menus/botones/BotonMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego/menus/MenuConfiguraciones.gd" type="Script" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://recursos/Background/bg_layer3.png" type="Texture" id=4]
 [ext_resource path="res://recursos/Background/bg_layer1.png" type="Texture" id=5]
 [ext_resource path="res://recursos/Background/bg_layer4.png" type="Texture" id=6]
+[ext_resource path="res://recursos/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
 
 [node name="MenuConfiguraciones" type="Control"]
 anchor_right = 1.0
@@ -13,44 +19,51 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 402.0
-margin_top = 173.0
-margin_right = 814.0
-margin_bottom = 265.0
+margin_left = 448.0
+margin_top = 208.0
+margin_right = 832.0
+margin_bottom = 312.0
 
 [node name="LabelVolumen" type="Label" parent="VBoxContainer"]
-margin_right = 412.0
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 384.0
 margin_bottom = 14.0
 text = "Volumen global:"
 
 [node name="SliderVolumen" type="HSlider" parent="VBoxContainer"]
 margin_top = 18.0
-margin_right = 412.0
+margin_right = 384.0
 margin_bottom = 34.0
 min_value = -50.0
 max_value = 0.0
 
-[node name="BotonMenu" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 38.0
-margin_right = 412.0
-margin_bottom = 64.0
-text = "Volver al inicio"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 68.0
-margin_right = 412.0
-margin_bottom = 92.0
+margin_top = 38.0
+margin_right = 384.0
+margin_bottom = 62.0
 
 [node name="LabelFullscreen" type="Label" parent="VBoxContainer/HBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
 margin_top = 5.0
-margin_right = 111.0
+margin_right = 118.0
 margin_bottom = 19.0
-text = "Pantall completa:"
+text = "Pantalla completa:"
 
 [node name="CheckFullscreen" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
-margin_left = 115.0
-margin_right = 139.0
+margin_left = 122.0
+margin_right = 146.0
 margin_bottom = 24.0
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 66.0
+margin_right = 384.0
+margin_bottom = 70.0
+
+[node name="BotonMenu" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 74.0
+margin_right = 384.0
+margin_bottom = 104.0
+text = "Volver al inicio"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( 0, -400 )
@@ -102,6 +115,33 @@ margin_right = 2048.0
 margin_bottom = 1172.08
 texture = ExtResource( 6 )
 
+[node name="Panel" type="Panel" parent="."]
+margin_left = 344.0
+margin_top = 32.0
+margin_right = 949.999
+margin_bottom = 147.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Panel"]
+modulate = Color( 0.737255, 0.443137, 0.878431, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -278.999
+margin_top = -34.5
+margin_right = 278.001
+margin_bottom = 34.5
+custom_fonts/font = SubResource( 1 )
+text = "Configuraciones"
+align = 1
+
 [connection signal="value_changed" from="VBoxContainer/SliderVolumen" to="." method="_on_SliderVolumen_value_changed"]
-[connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="_on_BotonMenu_pressed"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckFullscreen" to="." method="_on_CheckFullscreen_toggled"]
+[connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="_on_BotonMenu_pressed"]
