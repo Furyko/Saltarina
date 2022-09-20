@@ -1,8 +1,12 @@
 extends Control
 
 
+onready var checkboxFullscreen = $Panel/VBoxContainer/HBoxContainer/CheckFullscreen
+onready var esFullscreen = OS.window_fullscreen
+
 func _ready():
 	visible = false
+	checkboxFullscreen.pressed = esFullscreen
 	
 	
 func _input(event):

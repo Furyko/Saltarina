@@ -2,7 +2,11 @@ extends Control
 
 
 onready var nubes = $ParallaxBackground/ParallaxNubesLejanas
+onready var checkboxFullscreen = $VBoxContainer/HBoxContainer/CheckFullscreen
+onready var esFullscreen = OS.window_fullscreen
 
+func _ready():
+	checkboxFullscreen.pressed = esFullscreen
 
 func _process(_delta):
 	nubes.global_position.x -= 3
